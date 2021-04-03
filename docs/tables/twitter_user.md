@@ -1,8 +1,13 @@
 # Table: twitter_user
 
-Get information about a user.
+Get information about a single user.
 
-Note: The `id` (priority) or `username` field must be provided.
+To query lists of users see
+[twitter_user_follower](../twitter_user_follower) or
+[twitter_user_following](../twitter_user_following) or
+[twitter_user_mention](../twitter_user_mention) instead.
+
+Note: The `id` (preferred) or `username` field must be set in the `where` clause.
 
 ## Examples
 

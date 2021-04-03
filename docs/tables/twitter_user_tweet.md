@@ -1,8 +1,8 @@
 # Table: twitter_user_tweet
 
-Tweets published by the author.
+Tweets published by the specified user ID (author).
 
-Note: An `user_id` must be provided in all queries to this table.
+Note: The `user_id` field must be set in the `where` clause.
 
 ## Examples
 

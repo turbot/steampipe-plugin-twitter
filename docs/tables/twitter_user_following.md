@@ -2,7 +2,7 @@
 
 Query which users the specified user follows.
 
-Note: The `user_id` field must be provided.
+Note: The `user_id` field must be set in the `where` clause.
 
 ## Examples
 

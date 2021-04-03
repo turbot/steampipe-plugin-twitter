@@ -3,7 +3,7 @@
 Search the last 7 days of public tweets using the [Twitter search syntax and operators](https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query).
 
 Notes:
-* The `query` field must be provided in the `where` clause.
+* The `query` field must be set in the `where` clause.
 * To prevent excess API quota use, results are limited to `max_results_per_query` by default.
 
 ## Examples

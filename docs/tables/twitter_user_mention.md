@@ -1,8 +1,8 @@
 # Table: twitter_user_mention
 
-Tweets where the user is mentioned.
+Tweets where the specified user is mentioned.
 
-Note: A `user_id` must be provided in all queries to this table.
+Note: The `user_id` field must be set in the `where` clause.
 
 ## Examples
 

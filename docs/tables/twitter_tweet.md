@@ -1,8 +1,12 @@
 # Table: twitter_tweet
 
-Get information about a tweet.
+Get information about a any public tweet.
 
-Note: The `id` field must be provided.
+To query lists of tweets see
+[twitter_search_recent](../twitter_search_recent) or
+[twitter_user_tweet](../twitter_user_tweet) instead.
+
+Note: The `id` field must be set in the `where` clause.
 
 ## Examples
 

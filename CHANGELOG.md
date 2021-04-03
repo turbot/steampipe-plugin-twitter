@@ -1,4 +1,11 @@
 
+## v0.0.2 [TBD]
+
+_What's new?_
+
+- Clarified table documentation with where clause field requirements.
+
+
 ## v0.0.1 [2021-04-03]
 
 _What's new?_

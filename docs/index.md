@@ -47,13 +47,6 @@ where
 |                     | Changelog – https://t.co/8IETtyFBGZ                 |                 |
 |                     |                                                     |                 |
 |                     | #shiftleftjoin @awscloud https://t.co/o7ifZQlRMe    |                 |
-| 1377723768857104391 | New! Use SQL to instantly query Oracle Cloud 🚀     | ["OracleCloud"] |
-|                     |                                                     |                 |
-|                     | Open source. No DB required.                        |                 |
-|                     |                                                     |                 |
-|                     | #shiftleftjoin @OracleCloud                         |                 |
-|                     |                                                     |                 |
-|                     | https://t.co/Jy9imAz9qK                             |                 |
 +---------------------+-----------------------------------------------------+-----------------+
 ```
 
