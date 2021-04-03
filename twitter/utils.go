@@ -2,6 +2,7 @@ package twitter
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"net/http"
 	"os"
@@ -71,7 +72,7 @@ func connect(_ context.Context, d *plugin.QueryData) (*twitter.Client, error) {
 			Client: http.DefaultClient,
 			Host:   "https://api.twitter.com",
 		}
-	} else {
+	} else if consumerKey != "" {
 		config := oauth1.NewConfig(consumerKey, consumerSecret)
 		token := oauth1.NewToken(accessToken, accessSecret)
 		httpClient := config.Client(oauth1.NoContext, token)
@@ -80,6 +81,9 @@ func connect(_ context.Context, d *plugin.QueryData) (*twitter.Client, error) {
 			Client:     httpClient,
 			Host:       "https://api.twitter.com",
 		}
+	} else {
+		// Credentials not set
+		return nil, errors.New("bearer_token (or consumer_key etc) must be configured")
 	}
 
 	// Save to cache
