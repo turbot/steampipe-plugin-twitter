@@ -35,7 +35,7 @@ Prerequisites:
 Clone:
 
 ```sh
-git clone git@github.com:turbot/steampipe-plugin-twitter
+git clone https://github.com/turbot/steampipe-plugin-twitter.git
 cd steampipe-plugin-twitter
 ```
 
