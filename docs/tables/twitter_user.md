@@ -30,5 +30,5 @@ select
 from
   twitter_user
 where
-  id = 'steampipeio'
+  username = 'steampipeio'
 ```
