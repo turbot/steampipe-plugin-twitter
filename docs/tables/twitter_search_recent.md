@@ -67,7 +67,7 @@ where
 
 ```
 select 
-  place ->>'full_name',
+  place ->> 'full_name',
   author ->> 'username' as author,  
   text 
 from 
@@ -87,5 +87,5 @@ select
 from 
   twitter.twitter_search_recent
 where 
-  query 'weather point_radius:[-105.292778 40.019444 10mi]' 
+  query = 'weather point_radius:[-105.292778 40.019444 10mi]' 
 ```
