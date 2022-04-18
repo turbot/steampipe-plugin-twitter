@@ -43,22 +43,20 @@ func connect(_ context.Context, d *plugin.QueryData) (*twitter.Client, error) {
 
 	// First, use the token config
 	twitterConfig := GetConfig(d.Connection)
-	if &twitterConfig != nil {
-		if twitterConfig.BearerToken != nil {
-			bearerToken = *twitterConfig.BearerToken
-		}
-		if twitterConfig.ConsumerKey != nil {
-			consumerKey = *twitterConfig.ConsumerKey
-		}
-		if twitterConfig.ConsumerSecret != nil {
-			consumerSecret = *twitterConfig.ConsumerSecret
-		}
-		if twitterConfig.AccessToken != nil {
-			accessToken = *twitterConfig.AccessToken
-		}
-		if twitterConfig.AccessSecret != nil {
-			accessSecret = *twitterConfig.AccessSecret
-		}
+	if twitterConfig.BearerToken != nil {
+		bearerToken = *twitterConfig.BearerToken
+	}
+	if twitterConfig.ConsumerKey != nil {
+		consumerKey = *twitterConfig.ConsumerKey
+	}
+	if twitterConfig.ConsumerSecret != nil {
+		consumerSecret = *twitterConfig.ConsumerSecret
+	}
+	if twitterConfig.AccessToken != nil {
+		accessToken = *twitterConfig.AccessToken
+	}
+	if twitterConfig.AccessSecret != nil {
+		accessSecret = *twitterConfig.AccessSecret
 	}
 
 	var conn *twitter.Client
@@ -95,10 +93,8 @@ func connect(_ context.Context, d *plugin.QueryData) (*twitter.Client, error) {
 func maxItemsPerQuery(ctx context.Context, d *plugin.QueryData) int {
 	// First, use the config
 	twitterConfig := GetConfig(d.Connection)
-	if &twitterConfig != nil {
-		if twitterConfig.MaxItemsPerQuery != nil {
-			return *twitterConfig.MaxItemsPerQuery
-		}
+	if twitterConfig.MaxItemsPerQuery != nil {
+		return *twitterConfig.MaxItemsPerQuery
 	}
 	// Second, return a default
 	return 1000
