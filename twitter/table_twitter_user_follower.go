@@ -16,9 +16,7 @@ func tableTwitterUserFollower(ctx context.Context) *plugin.Table {
 			Hydrate:    listUserFollower,
 			KeyColumns: plugin.SingleColumn("user_id"),
 		},
-		Columns: append(
-			userColumns("user_id"),
-		),
+		Columns: userColumns("user_id"),
 	}
 }
 
