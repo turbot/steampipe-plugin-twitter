@@ -67,7 +67,7 @@ where
 
 ```
 select 
-  place ->> 'full_name',
+  place ->> 'full_name' as place,
   author ->> 'username' as author,  
   text 
 from 
