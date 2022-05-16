@@ -85,7 +85,7 @@ Note: `point_radius` and related operators are not available with a basic ("Esse
 select 
   *
 from 
-  twitter.twitter_search_recent
+  twitter_search_recent
 where 
   query = 'weather point_radius:[-105.292778 40.019444 10mi]' 
 ```
