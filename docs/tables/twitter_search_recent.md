@@ -71,7 +71,7 @@ select
   author ->> 'username' as author,  
   text 
 from 
-  twitter.twitter_search_recent
+  twitter_search_recent
 where 
   query = 'weather' 
   and place ->> 'full_name' ~* ' vt$'  -- regex matches 'Barre VT' etc
