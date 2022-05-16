@@ -1,4 +1,4 @@
-# Table: twitter_search
+# Table: twitter_search_recent
 
 Search the last 7 days of public tweets using the [Twitter search syntax and operators](https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query).
 
@@ -14,7 +14,7 @@ Notes:
 select
   *
 from
-  twitter_search
+  twitter_search_recent
 where
   query = '#rowscoloredglasses'
 ```
@@ -25,7 +25,7 @@ where
 select
   *
 from
-  twitter_search
+  twitter_search_recent
 where
   query = '@steampipeio'
 ```
@@ -36,7 +36,7 @@ where
 select
   *
 from
-  twitter_search
+  twitter_search_recent
 where
   query = 'from:steampipeio'
 ```
@@ -47,7 +47,7 @@ where
 select
   *
 from
-  twitter_search
+  twitter_search_recent
 where
   query = 'to:steampipeio'
 ```
@@ -58,7 +58,7 @@ where
 select
   *
 from
-  twitter_search
+  twitter_search_recent
 where
   query = 'url:steampipe.io'
 ```
