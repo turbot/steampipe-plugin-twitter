@@ -1,6 +1,6 @@
 # Table: twitter_tweet
 
-Get information about a any public tweet.
+Get information about a public tweet.
 
 To query lists of tweets see
 [twitter_search_recent](../twitter_search_recent) or
