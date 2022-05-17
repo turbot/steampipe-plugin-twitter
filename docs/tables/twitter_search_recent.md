@@ -62,3 +62,30 @@ from
 where
   query = 'url:steampipe.io'
 ```
+
+### Place, author, and text for tweets about the weather in Vermont
+
+```
+select 
+  place ->> 'full_name' as place,
+  author ->> 'username' as author,  
+  text 
+from 
+  twitter_search_recent
+where 
+  query = 'weather' 
+  and place ->> 'full_name' ~* ' vt$'  -- regex matches 'Barre VT' etc
+```
+
+### Tweets about weather within 10 miles of a lat/lon location 
+
+Note: `point_radius` and related operators are not available with a basic ("Essential") account, see [operators by product](https://developer.twitter.com/en/docs/twitter-api/enterprise/rules-and-filtering/operators-by-product).
+
+```
+select 
+  *
+from 
+  twitter_search_recent
+where 
+  query = 'weather point_radius:[-105.292778 40.019444 10mi]' 
+```
