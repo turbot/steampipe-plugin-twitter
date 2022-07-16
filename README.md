@@ -21,7 +21,7 @@ Run a query:
 select
   *
 from
-  twitter_search
+  twitter_search_recent
 where
   query = '#rowscoloredglasses'
 ```
