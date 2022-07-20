@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/dghubble/oauth1 v0.7.0
 	github.com/g8rswimmer/go-twitter v2.0.0-beta4+incompatible
-	github.com/turbot/steampipe-plugin-sdk/v3 v3.3.1
+	github.com/turbot/steampipe-plugin-sdk/v3 v3.3.2
 )
 
 require (
