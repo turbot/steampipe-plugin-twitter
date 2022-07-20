@@ -23,7 +23,7 @@ func tableTwitterUserFollowing(ctx context.Context) *plugin.Table {
 func listUserFollowing(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	conn, err := connect(ctx, d)
 	if err != nil {
-		plugin.Logger(ctx).Error("twitter_search.listUserFollowing", "connection_error", err)
+		plugin.Logger(ctx).Error("twitter_user.listUserFollowing", "connection_error", err)
 		return nil, err
 	}
 	maxItems := maxItemsPerQuery(ctx, d)
@@ -39,7 +39,7 @@ func listUserFollowing(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 	for {
 		result, err := conn.UserFollowingLookup(ctx, userID, opts)
 		if err != nil {
-			plugin.Logger(ctx).Error("twitter_search.listUserFollowing", "query_error", err, "userID", userID, "opts", opts)
+			plugin.Logger(ctx).Error("twitter_user.listUserFollowing", "query_error", err, "userID", userID, "opts", opts)
 			return nil, err
 		}
 		for _, i := range result.Raw.UserDictionaries() {

@@ -23,7 +23,7 @@ func tableTwitterUserMention(ctx context.Context) *plugin.Table {
 func listUserMention(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	conn, err := connect(ctx, d)
 	if err != nil {
-		plugin.Logger(ctx).Error("twitter_search.listUserMention", "connection_error", err)
+		plugin.Logger(ctx).Error("twitter_user_mention.listUserMention", "connection_error", err)
 		return nil, err
 	}
 	maxItems := maxItemsPerQuery(ctx, d)
@@ -44,7 +44,7 @@ func listUserMention(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrate
 			for _, q := range quals["created_at"].Quals {
 				ts, e := ptypes.Timestamp(q.Value.GetTimestampValue())
 				if e != nil {
-					plugin.Logger(ctx).Error("twitter_search.listUserMention", "parse_error", e, "userID", userID, "opts", opts)
+					plugin.Logger(ctx).Error("twitter_user_mention.listUserMention", "parse_error", e, "userID", userID, "opts", opts)
 					continue
 				}
 				switch q.GetStringValue() {
@@ -61,7 +61,7 @@ func listUserMention(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrate
 	for {
 		result, err := conn.UserMentionTimeline(ctx, userID, opts)
 		if err != nil {
-			plugin.Logger(ctx).Error("twitter_search.listUserMention", "query_error", err, "userID", userID, "opts", opts)
+			plugin.Logger(ctx).Error("twitter_user_mention.listUserMention", "query_error", err, "userID", userID, "opts", opts)
 			return nil, err
 		}
 		for _, i := range result.Raw.TweetDictionaries() {

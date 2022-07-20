@@ -24,7 +24,7 @@ func tableTwitterUserTweet(ctx context.Context) *plugin.Table {
 func listUserTweet(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	conn, err := connect(ctx, d)
 	if err != nil {
-		plugin.Logger(ctx).Error("twitter_search.listUserTweet", "connection_error", err)
+		plugin.Logger(ctx).Error("twitter_user_tweet.listUserTweet", "connection_error", err)
 		return nil, err
 	}
 	maxItems := maxItemsPerQuery(ctx, d)
@@ -45,7 +45,7 @@ func listUserTweet(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 			for _, q := range quals["created_at"].Quals {
 				ts, e := ptypes.Timestamp(q.Value.GetTimestampValue())
 				if e != nil {
-					plugin.Logger(ctx).Error("twitter_search.listUserTweet", "parse_error", e, "userID", userID, "opts", opts)
+					plugin.Logger(ctx).Error("twitter_user_tweet.listUserTweet", "parse_error", e, "userID", userID, "opts", opts)
 					continue
 				}
 				switch q.GetStringValue() {
@@ -62,7 +62,7 @@ func listUserTweet(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 	for {
 		result, err := conn.UserTweetTimeline(ctx, userID, opts)
 		if err != nil {
-			plugin.Logger(ctx).Error("twitter_search.listUserTweet", "query_error", err, "userID", userID, "opts", opts)
+			plugin.Logger(ctx).Error("twitter_user_tweet.listUserTweet", "query_error", err, "userID", userID, "opts", opts)
 			return nil, err
 		}
 		for _, i := range result.Raw.TweetDictionaries() {
