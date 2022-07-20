@@ -1,3 +1,17 @@
+## v0.1.1 [2022-07-20]
+
+_Enhancements_
+
+- Added geo-related examples and to `twitter_search_recent` table document. ([#11](https://github.com/turbot/steampipe-plugin-twitter/pull/11))
+
+_Bug fixes_
+
+- Fixed incorrect table name in `twitter_search_recent` table document example queries. ([#18](https://github.com/turbot/steampipe-plugin-twitter/pull/18))
+
+_Dependencies_
+
+- Recompiled plugin with [steampipe-plugin-sdk v3.3.2](https://github.com/turbot/steampipe-plugin-sdk/blob/main/CHANGELOG.md#v332--2022-07-11) which includes several caching fixes.
+
 ## v0.1.0 [2022-04-28]
 
 _Enhancements_
@@ -28,7 +42,7 @@ _Enhancements_
 _What's new?_
 
 - New tables added
-  - [twitter_search](https://hub.steampipe.io/plugins/turbot/twitter/tables/twitter_search)
+  - [twitter_search_recent](https://hub.steampipe.io/plugins/turbot/twitter/tables/twitter_search_recent)
   - [twitter_tweet](https://hub.steampipe.io/plugins/turbot/twitter/tables/twitter_tweet)
   - [twitter_user](https://hub.steampipe.io/plugins/turbot/twitter/tables/twitter_user)
   - [twitter_user_follower](https://hub.steampipe.io/plugins/turbot/twitter/tables/twitter_user_follower)
