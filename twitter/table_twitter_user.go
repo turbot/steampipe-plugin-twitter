@@ -55,10 +55,8 @@ func listUser(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (
 
 	// Soft error, e.g. 404
 	if len(result.Raw.Errors) > 0 {
-		errMsgs := []string{}
 		for _, e := range result.Raw.Errors {
 			plugin.Logger(ctx).Error("twitter_user.listUser", "query_error", e, "opts", opts)
-			errMsgs = append(errMsgs, fmt.Sprintf("%s: %s", e.Title, e.Detail))
 			
 			// Check if the Not Found Error is a result of "pinned_tweet_id" parameter, return nil
 			if e.Title == "Not Found Error" {
