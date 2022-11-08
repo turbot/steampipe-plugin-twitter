@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/dghubble/oauth1 v0.7.0
-	github.com/g8rswimmer/go-twitter v2.0.0-beta4+incompatible
+	github.com/g8rswimmer/go-twitter/v2 v2.1.2
 	github.com/turbot/steampipe-plugin-sdk/v4 v4.1.6
 )
 
