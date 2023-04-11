@@ -6,7 +6,7 @@ import (
 	twitter "github.com/g8rswimmer/go-twitter/v2"
 	//"github.com/golang/protobuf/ptypes"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )
 
 func tableTwitterUserTweet(ctx context.Context) *plugin.Table {
@@ -35,7 +35,7 @@ func listUserTweet(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 		MaxResults:  min(100, maxItems),
 	}
 
-	keyQuals := d.KeyColumnQuals
+	keyQuals := d.EqualsQuals
 	userID := keyQuals["user_id"].GetStringValue()
 
 	/*

@@ -5,7 +5,7 @@ import (
 
 	twitter "github.com/g8rswimmer/go-twitter/v2"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )
 
 func tableTwitterSearchRecent(ctx context.Context) *plugin.Table {
@@ -26,7 +26,7 @@ func listSearchRecent(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrat
 		plugin.Logger(ctx).Error("twitter_search.listSearchRecent", "connection_error", err)
 		return nil, err
 	}
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	q := quals["query"].GetStringValue()
 	maxItems := maxItemsPerQuery(ctx, d)
 	opts := twitter.TweetRecentSearchOpts{

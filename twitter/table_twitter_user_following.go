@@ -5,7 +5,7 @@ import (
 
 	twitter "github.com/g8rswimmer/go-twitter/v2"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )
 
 func tableTwitterUserFollowing(ctx context.Context) *plugin.Table {
@@ -33,7 +33,7 @@ func listUserFollowing(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 		TweetFields: tweetFields(),
 		MaxResults:  min(100, maxItems),
 	}
-	keyQuals := d.KeyColumnQuals
+	keyQuals := d.EqualsQuals
 	userID := keyQuals["user_id"].GetStringValue()
 	count := 0
 	for {
