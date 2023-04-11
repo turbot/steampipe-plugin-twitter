@@ -5,7 +5,7 @@ import (
 
 	twitter "github.com/g8rswimmer/go-twitter/v2"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )
 
 func tableTwitterUserMention(ctx context.Context) *plugin.Table {
@@ -34,7 +34,7 @@ func listUserMention(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrate
 		MaxResults:  min(100, maxItems),
 	}
 
-	keyQuals := d.KeyColumnQuals
+	keyQuals := d.EqualsQuals
 	userID := keyQuals["user_id"].GetStringValue()
 
 	/*

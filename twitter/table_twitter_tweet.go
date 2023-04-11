@@ -8,7 +8,7 @@ import (
 
 	twitter "github.com/g8rswimmer/go-twitter/v2"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )
 
 func tableTwitterTweet(ctx context.Context) *plugin.Table {
@@ -34,7 +34,7 @@ func listTweet(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 		TweetFields: tweetFields(),
 		UserFields:  userFields(),
 	}
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 	id := quals["id"].GetStringValue()
 	result, err := conn.TweetLookup(ctx, []string{id}, opts)
 	// Hard error
