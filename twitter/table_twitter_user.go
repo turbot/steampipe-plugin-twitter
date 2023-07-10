@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"strings"
 
+
 	twitter "github.com/g8rswimmer/go-twitter/v2"
 
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
@@ -49,19 +50,34 @@ func listUser(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (
 		plugin.Logger(ctx).Error("twitter_user.listUser", "query_error", lookupErr, "opts", opts)
 		return nil, lookupErr
 	}
+
+	softErrors := []*twitter.ErrorObj{}
+
 	// Soft error, e.g. 404
 	if len(result.Raw.Errors) > 0 {
-		errMsgs := []string{}
 		for _, e := range result.Raw.Errors {
 			plugin.Logger(ctx).Error("twitter_user.listUser", "query_error", e, "opts", opts)
-			errMsgs = append(errMsgs, fmt.Sprintf("%s: %s", e.Title, e.Detail))
+			
+			// Check if the Not Found Error is a result of "pinned_tweet_id" parameter, return nil
 			if e.Title == "Not Found Error" {
+				if e.Parameter == "pinned_tweet_id" {
+					continue
+				}
 				return nil, nil
 			}
+			softErrors = append(softErrors, e)
+		}
+	}
+
+	if len(softErrors) > 0 {
+		errMsgs := []string{}
+		for _, e := range softErrors {
+			errMsgs = append(errMsgs, fmt.Sprintf("%s: %s", e.Title, e.Detail))
 		}
 		// Return the full set of error messages
 		return nil, errors.New(strings.Join(errMsgs, "\n"))
 	}
+
 	for _, i := range result.Raw.UserDictionaries() {
 		d.StreamListItem(ctx, i)
 	}
