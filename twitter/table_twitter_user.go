@@ -51,7 +51,7 @@ func listUser(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (
 		return nil, lookupErr
 	}
 
-	softError := []*twitter.ErrorObj{}
+	softErrors := []*twitter.ErrorObj{}
 
 	// Soft error, e.g. 404
 	if len(result.Raw.Errors) > 0 {
@@ -65,13 +65,13 @@ func listUser(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (
 				}
 				return nil, nil
 			}
-			softError = append(softError, e)
+			softErrors = append(softErrors, e)
 		}
 	}
 
-	if len(softError) > 0 {
+	if len(softErrors) > 0 {
 		errMsgs := []string{}
-		for _, e := range softError {
+		for _, e := range softErrors {
 			errMsgs = append(errMsgs, fmt.Sprintf("%s: %s", e.Title, e.Detail))
 		}
 		// Return the full set of error messages
