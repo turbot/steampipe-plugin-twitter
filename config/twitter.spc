@@ -15,7 +15,7 @@ connection "twitter" {
   # access_token    = "YOUR_ACCESS_TOKEN"
   # access_secret   = "YOUR_ACCESS_SECRET"
 
-  # Cap the number of items retreived from the API as part of each query,
+  # Cap the number of items retrieved from the API as part of each query,
   # preventing over-consumption of Twitter API limits. Defaults to 1000. Set
   # to -1 to indicate no limit.
   # max_items_per_query = 1000
