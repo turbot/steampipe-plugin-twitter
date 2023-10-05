@@ -3,7 +3,7 @@ module github.com/turbot/steampipe-plugin-twitter
 go 1.21
 
 require (
-	github.com/dghubble/oauth1 v0.7.0
+	github.com/dghubble/oauth1 v0.7.2
 	github.com/g8rswimmer/go-twitter/v2 v2.1.2
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.6.2
 )
