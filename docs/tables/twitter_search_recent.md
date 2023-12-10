@@ -22,7 +22,7 @@ select
 from
   twitter_search_recent
 where
-  query = '#rowscoloredglasses'
+  query = '#rowscoloredglasses';
 ```
 
 ```sql+sqlite
@@ -31,7 +31,7 @@ select
 from
   twitter_search_recent
 where
-  query = '#rowscoloredglasses'
+  query = '#rowscoloredglasses';
 ```
 
 ### Tweets mentioning a user
@@ -43,7 +43,7 @@ select
 from
   twitter_search_recent
 where
-  query = '@steampipeio'
+  query = '@steampipeio';
 ```
 
 ```sql+sqlite
@@ -52,7 +52,7 @@ select
 from
   twitter_search_recent
 where
-  query = '@steampipeio'
+  query = '@steampipeio';
 ```
 
 ### Tweets by a given author
@@ -64,7 +64,7 @@ select
 from
   twitter_search_recent
 where
-  query = 'from:steampipeio'
+  query = 'from:steampipeio';
 ```
 
 ```sql+sqlite
@@ -73,7 +73,7 @@ select
 from
   twitter_search_recent
 where
-  query = 'from:steampipeio'
+  query = 'from:steampipeio';
 ```
 
 ### Tweets in reply to a user
@@ -85,7 +85,7 @@ select
 from
   twitter_search_recent
 where
-  query = 'to:steampipeio'
+  query = 'to:steampipeio';
 ```
 
 ```sql+sqlite
@@ -94,7 +94,7 @@ select
 from
   twitter_search_recent
 where
-  query = 'to:steampipeio'
+  query = 'to:steampipeio';
 ```
 
 ### Tweets using a URL (matches expanded form inside short links)
@@ -106,7 +106,7 @@ select
 from
   twitter_search_recent
 where
-  query = 'url:steampipe.io'
+  query = 'url:steampipe.io';
 ```
 
 ```sql+sqlite
@@ -115,7 +115,7 @@ select
 from
   twitter_search_recent
 where
-  query = 'url:steampipe.io'
+  query = 'url:steampipe.io';
 ```
 
 ### Place, author, and text for tweets about the weather in Vermont
@@ -129,7 +129,7 @@ from
   twitter_search_recent
 where 
   query = 'weather' 
-  and place ->> 'full_name' ~* ' vt$'  -- regex matches 'Barre VT' etc
+  and place ->> 'full_name' ~* ' vt$'  -- regex matches 'Barre VT' etc;
 ```
 
 ### Tweets about weather within 10 miles of a lat/lon location 
@@ -142,5 +142,5 @@ select
 from 
   twitter_search_recent
 where 
-  query = 'weather point_radius:[-105.292778 40.019444 10mi]' 
+  query = 'weather point_radius:[-105.292778 40.019444 10mi]' ;
 ```

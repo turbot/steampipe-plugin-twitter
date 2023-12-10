@@ -22,7 +22,7 @@ select
 from
   twitter_tweet
 where
-  id = '1373134228620214275'
+  id = '1373134228620214275';
 ```
 
 ```sql+sqlite
@@ -31,5 +31,5 @@ select
 from
   twitter_tweet
 where
-  id = '1373134228620214275'
+  id = '1373134228620214275';
 ```

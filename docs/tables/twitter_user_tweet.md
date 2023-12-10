@@ -27,7 +27,7 @@ where
 order by
   created_at desc
 limit
-  5
+  5;
 ```
 
 ```sql+sqlite
@@ -41,7 +41,7 @@ where
 order by
   created_at desc
 limit
-  5
+  5;
 ```
 
 ### Find all tweets in a user timeline related to open source
@@ -57,7 +57,7 @@ from
   jsonb_array_elements(context_annotations) as ca
 where
   user_id = '8092452' -- @turbothq
-  and ca->'entity'->>'name' = 'Open source'
+  and ca->'entity'->>'name' = 'Open source';
 ```
 
 ```sql+sqlite
@@ -70,7 +70,7 @@ from
   json_each(context_annotations) as ca
 where
   user_id = '8092452' -- @turbothq
-  and json_extract(ca.value, '$.entity.name') = 'Open source'
+  and json_extract(ca.value, '$.entity.name') = 'Open source';
 ```
 
 ### Get tweet timeline by username
@@ -84,7 +84,7 @@ select
 from
   twitter_user_tweet as t
 where
-  t.user_id in (select id from twitter_user where username = 'steampipeio')
+  t.user_id in (select id from twitter_user where username = 'steampipeio');
 ```
 
 ```sql+sqlite
@@ -94,7 +94,7 @@ select
 from
   twitter_user_tweet as t
 where
-  t.user_id in (select id from twitter_user where username = 'steampipeio')
+  t.user_id in (select id from twitter_user where username = 'steampipeio');
 ```
 
 Via join:
@@ -107,7 +107,7 @@ from
   twitter_user as u
 where
   t.user_id = u.id
-  and u.username = 'steampipeio'
+  and u.username = 'steampipeio';
 ```
 
 ```sql+sqlite
@@ -119,5 +119,5 @@ from
   twitter_user as u
 where
   t.user_id = u.id
-  and u.username = 'steampipeio'
+  and u.username = 'steampipeio';
 ```

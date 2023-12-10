@@ -22,7 +22,7 @@ select
 from
   twitter_user
 where
-  id = '1318177503995985921' -- @steampipeio
+  id = '1318177503995985921'; -- @steampipeio
 ```
 
 ```sql+sqlite
@@ -31,7 +31,7 @@ select
 from
   twitter_user
 where
-  id = '1318177503995985921' -- @steampipeio
+  id = '1318177503995985921'; -- @steampipeio
 ```
 
 ### Get user by username
@@ -43,7 +43,7 @@ select
 from
   twitter_user
 where
-  username = 'steampipeio'
+  username = 'steampipeio';
 ```
 
 ```sql+sqlite
@@ -52,5 +52,5 @@ select
 from
   twitter_user
 where
-  username = 'steampipeio'
+  username = 'steampipeio';
 ```

@@ -27,7 +27,7 @@ where
 order by
   created_at desc
 limit
-  5
+  5;
 ```
 
 ```sql+sqlite
@@ -41,7 +41,7 @@ where
 order by
   created_at desc
 limit
-  5
+  5;
 ```
 
 ### Get mention timeline by username
@@ -55,7 +55,7 @@ select
 from
   twitter_user_mention as t
 where
-  t.user_id in (select id from twitter_user where username = 'steampipeio')
+  t.user_id in (select id from twitter_user where username = 'steampipeio');
 ```
 
 ```sql+sqlite
@@ -65,7 +65,7 @@ select
 from
   twitter_user_mention as t
 where
-  t.user_id in (select id from twitter_user where username = 'steampipeio')
+  t.user_id in (select id from twitter_user where username = 'steampipeio');
 ```
 
 Via join:
@@ -78,7 +78,7 @@ from
   twitter_user as u
 where
   t.user_id = u.id
-  and u.username = 'steampipeio'
+  and u.username = 'steampipeio';
 ```
 
 ```sql+sqlite
@@ -90,5 +90,5 @@ from
   twitter_user as u
 where
   t.user_id = u.id
-  and u.username = 'steampipeio'
+  and u.username = 'steampipeio';
 ```

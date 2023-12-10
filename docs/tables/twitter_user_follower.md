@@ -22,7 +22,7 @@ select
 from
   twitter_user_follower
 where
-  user_id = '1318177503995985921' -- @steampipeio
+  user_id = '1318177503995985921'; -- @steampipeio
 ```
 
 ```sql+sqlite
@@ -31,7 +31,7 @@ select
 from
   twitter_user_follower
 where
-  user_id = '1318177503995985921' -- @steampipeio
+  user_id = '1318177503995985921'; -- @steampipeio;
 ```
 
 ### List followers by username
@@ -53,7 +53,7 @@ where
       twitter_user
     where
       username = 'steampipeio'
-  )
+  );
 ```
 
 ```sql+sqlite
@@ -71,7 +71,7 @@ where
       twitter_user
     where
       username = 'steampipeio'
-  )
+  );
 ```
 
 Via join:
@@ -84,7 +84,7 @@ from
   twitter_user as u
 where
   uf.user_id = u.id
-  and u.username = 'steampipeio'
+  and u.username = 'steampipeio';
 ```
 
 ```sql+sqlite
@@ -96,7 +96,7 @@ from
   twitter_user as u
 where
   uf.user_id = u.id
-  and u.username = 'steampipeio'
+  and u.username = 'steampipeio';
 ```
 
 ### Find the top 10 followers for a user
@@ -120,7 +120,7 @@ where
 order by
   follower_count desc
 limit
-  10
+  10;
 ```
 
 ```sql+sqlite
@@ -137,5 +137,5 @@ where
 order by
   follower_count desc
 limit
-  10
+  10;
 ```

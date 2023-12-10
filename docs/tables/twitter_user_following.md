@@ -22,7 +22,7 @@ select
 from
   twitter_user_following
 where
-  user_id = '1318177503995985921' -- @steampipeio
+  user_id = '1318177503995985921'; -- @steampipeio
 ```
 
 ```sql+sqlite
@@ -31,7 +31,7 @@ select
 from
   twitter_user_following
 where
-  user_id = '1318177503995985921' -- @steampipeio
+  user_id = '1318177503995985921'; -- @steampipeio
 ```
 
 ### List follows by username
@@ -53,7 +53,7 @@ where
       twitter_user
     where
       username = 'steampipeio'
-  )
+  );
 ```
 
 ```sql+sqlite
@@ -71,7 +71,7 @@ where
       twitter_user
     where
       username = 'steampipeio'
-  )
+  );
 ```
 
 ### Find all users followed by both turbothq and nathanwallace
@@ -84,7 +84,7 @@ select
 from
   twitter_user_following
 where
-  user_id in (select id from twitter_user where username = 'turbothq')
+  user_id in (select id from twitter_user where username = 'turbothq');
 
 intersect
 
@@ -94,7 +94,7 @@ select
 from
   twitter_user_following
 where
-  user_id in (select id from twitter_user where username = 'nathanwallace')
+  user_id in (select id from twitter_user where username = 'nathanwallace');
 ```
 
 ```sql+sqlite
@@ -114,7 +114,7 @@ select
 from
   twitter_user_following
 where
-  user_id in (select id from twitter_user where username = 'nathanwallace')
+  user_id in (select id from twitter_user where username = 'nathanwallace');
 ```
 
 ### Find users who follow you, but you don't follow them
@@ -177,7 +177,7 @@ where
       following
   )
 order by
-  username
+  username;
 ```
 
 ```sql+sqlite
@@ -237,5 +237,5 @@ where
       following
   )
 order by
-  username
+  username;
 ```
