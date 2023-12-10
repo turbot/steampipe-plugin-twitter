@@ -11,6 +11,9 @@ Twitter is a social media platform that allows users to post and interact with m
 
 The `twitter_user_follower` table provides insights into the followers of a specific Twitter user. As a social media analyst, you can explore follower-specific details through this table, including follower count, location, and associated metadata. Utilize it to uncover information about followers, such as their geographical distribution, follower count trends, and the verification status of followers.
 
+**Important Notes**
+- The `user_id` field must be set in the `where` clause.
+
 ## Examples
 
 ### List followers for a user

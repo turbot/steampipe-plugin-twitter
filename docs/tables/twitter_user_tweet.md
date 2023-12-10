@@ -11,6 +11,9 @@ Twitter is a social networking service where users post and interact with messag
 
 The `twitter_user_tweet` table provides insights into tweets made by specific Twitter users. As a data analyst or social media manager, explore tweet-specific details through this table, including content, engagement metrics, and user details. Utilize it to uncover information about tweet patterns, engagement rates, and the impact of specific tweets, facilitating better understanding and decision-making for social media strategies.
 
+**Important Notes**
+- The `user_id` field must be set in the `where` clause.
+
 ## Examples
 
 ### Last 5 tweets by the author

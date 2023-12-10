@@ -11,6 +11,12 @@ Twitter is a widely used social media platform that allows users to post and int
 
 The `twitter_tweet` table gives insights into individual tweets on the Twitter platform. As a data analyst or social media manager, you can delve into tweet-specific details through this table, including content, user, location, and associated metadata. Use it to analyze tweet patterns, user interactions, and trending topics for strategic decision-making and targeted marketing campaigns.
 
+**Important Notes**
+- To query lists of tweets see
+[twitter_search_recent](../twitter_search_recent) or
+[twitter_user_tweet](../twitter_user_tweet) instead.
+- The `id` field must be set in the `where` clause.
+
 ## Examples
 
 ### Get tweet by ID

@@ -11,6 +11,9 @@ Twitter User Following is a feature within Twitter that allows a user to follow 
 
 The `twitter_user_following` table provides insights into the users that a specific Twitter user is following. As a Social Media Analyst, explore user-specific details through this table, including the list of users they follow, their interests, and their engagement. Utilize it to understand user behavior, their preferences, and to create targeted marketing strategies.
 
+**Important Notes**
+- The `user_id` field must be set in the `where` clause.
+
 ## Examples
 
 ### List the follows for a user

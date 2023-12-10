@@ -11,6 +11,9 @@ Twitter User Mentions are instances when a Twitter user includes another user's 
 
 The `twitter_user_mention` table provides insights into Twitter User Mentions, specifically the details of the users who have mentioned the authenticated user in their tweets. As a social media analyst, explore user-specific details through this table, including the frequency of mentions, the context of mentions, and associated metadata. Utilize it to uncover information about user interactions, such as the most active users, the nature of interactions, and the reach of your tweets.
 
+**Important Notes**
+- The `user_id` field must be set in the `where` clause.
+
 ## Examples
 
 ### Last 5 tweets that mention the user

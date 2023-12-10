@@ -11,6 +11,13 @@ Twitter is a social networking service where users post and interact with messag
 
 The `twitter_user` table provides insights into Twitter Users within the Twitter social networking service. As a social media analyst or digital marketer, explore user-specific details through this table, including profile information, follower counts, and tweet history. Utilize it to uncover information about users, such as their interests, associations, and influence within the Twitter community.
 
+**Important Notes**
+- To query lists of users see
+[twitter_user_follower](../twitter_user_follower) or
+[twitter_user_following](../twitter_user_following) or
+[twitter_user_mention](../twitter_user_mention) instead.
+- The `id` (preferred) or `username` field must be set in the `where` clause.
+
 ## Examples
 
 ### Get user by ID
