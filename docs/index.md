@@ -85,7 +85,4 @@ connection "twitter" {
 }
 ```
 
-## Get involved
 
-* Open source: https://github.com/turbot/steampipe-plugin-twitter
-* Community: [Discussion forums](https://github.com/turbot/steampipe/discussions)
