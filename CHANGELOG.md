@@ -8,7 +8,7 @@ _What's new?_
 
 _Dependencies_
 
-- Recompiled plugin with [steampipe-plugin-sdk v5.8.0](https://github.com/turbot/steampipe-plugin-sdk/blob/main/CHANGELOG.md#v580-2023-12-11) that includes plugin server encapsulation for in-process and GRPC usage, adding Steampipe Plugin SDK version to  column, and fixing connection and potential divide-by-zero bugs. ([#45](https://github.com/turbot/steampipe-plugin-twitter/pull/45))
+- Recompiled plugin with [steampipe-plugin-sdk v5.8.0](https://github.com/turbot/steampipe-plugin-sdk/blob/main/CHANGELOG.md#v580-2023-12-11) that includes plugin server encapsulation for in-process and GRPC usage, adding Steampipe Plugin SDK version to  column `_ctx`, and fixing connection and potential divide-by-zero bugs. ([#45](https://github.com/turbot/steampipe-plugin-twitter/pull/45))
 
 ## v0.4.1 [2023-10-05]
 
