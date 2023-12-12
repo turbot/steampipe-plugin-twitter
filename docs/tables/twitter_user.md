@@ -1,34 +1,63 @@
-# Table: twitter_user
+---
+title: "Steampipe Table: twitter_user - Query Twitter Users using SQL"
+description: "Allows users to query Twitter Users, specifically user profile details, providing insights into user behavior, interests, and associations."
+---
 
-Get information about a single user.
+# Table: twitter_user - Query Twitter Users using SQL
 
-To query lists of users see
+Twitter is a social networking service where users post and interact with messages known as 'tweets'. It allows users to follow others and be followed, retweet posts, like posts, and more. Twitter Users are the individual accounts that participate in this network, each with a unique username, profile details, and tweet history.
+
+## Table Usage Guide
+
+The `twitter_user` table provides insights into Twitter Users within the Twitter social networking service. As a social media analyst or digital marketer, explore user-specific details through this table, including profile information, follower counts, and tweet history. Utilize it to uncover information about users, such as their interests, associations, and influence within the Twitter community.
+
+**Important Notes**
+- To query lists of users see
 [twitter_user_follower](../twitter_user_follower) or
 [twitter_user_following](../twitter_user_following) or
 [twitter_user_mention](../twitter_user_mention) instead.
-
-Note: The `id` (preferred) or `username` field must be set in the `where` clause.
+- The `id` (preferred) or `username` field must be set in the `where` clause.
 
 ## Examples
 
 ### Get user by ID
+Determine the specific user details on Twitter by using their unique ID. This can be particularly useful in understanding the user's activity and profile information without having to manually search for them.
 
-```sql
+```sql+postgres
 select
   *
 from
   twitter_user
 where
-  id = '1318177503995985921' -- @steampipeio
+  id = '1318177503995985921'; -- @steampipeio
+```
+
+```sql+sqlite
+select
+  *
+from
+  twitter_user
+where
+  id = '1318177503995985921'; -- @steampipeio
 ```
 
 ### Get user by username
+Explore which user details are associated with a specific username on Twitter. This can be beneficial in scenarios where you need to understand the profile details of a particular user for research or analysis purposes.
 
-```sql
+```sql+postgres
 select
   *
 from
   twitter_user
 where
-  username = 'steampipeio'
+  username = 'steampipeio';
+```
+
+```sql+sqlite
+select
+  *
+from
+  twitter_user
+where
+  username = 'steampipeio';
 ```

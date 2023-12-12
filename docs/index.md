@@ -8,11 +8,12 @@ name: twitter
 description: Steampipe plugin to query tweets, users and followers from Twitter.
 og_description: Query Twitter with SQL! Open source CLI. No DB required.
 og_image: "/images/plugins/turbot/twitter-social-graphic.png"
+engines: ["steampipe", "sqlite", "postgres", "export"]
 ---
 
 # Twitter + Steampipe
 
-[Steampipe](https://steampipe.io) is an open source CLI to instantly query cloud APIs using SQL.
+[Steampipe](https://steampipe.io) is an open-source zero-ETL engine to instantly query cloud APIs using SQL.
 
 [Twitter](https://twitter.com) is an American microblogging and social networking service on which users post and interact with messages known as "tweets".
 
@@ -84,7 +85,4 @@ connection "twitter" {
 }
 ```
 
-## Get involved
 
-* Open source: https://github.com/turbot/steampipe-plugin-twitter
-* Community: [Discussion forums](https://github.com/turbot/steampipe/discussions)
