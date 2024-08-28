@@ -1,13 +1,13 @@
 module github.com/turbot/steampipe-plugin-twitter
 
-go 1.21.0
+go 1.22.4
 
-toolchain go1.21.1
+toolchain go1.22.6
 
 require (
 	github.com/dghubble/oauth1 v0.7.0
 	github.com/g8rswimmer/go-twitter/v2 v2.1.2
-	github.com/turbot/steampipe-plugin-sdk/v5 v5.10.1
+	github.com/turbot/steampipe-plugin-sdk/v5 v5.10.3
 )
 
 require (
