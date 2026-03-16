@@ -7,7 +7,7 @@ toolchain go1.24.1
 require (
 	github.com/dghubble/oauth1 v0.7.0
 	github.com/g8rswimmer/go-twitter/v2 v2.1.2
-	github.com/turbot/steampipe-plugin-sdk/v5 v5.13.1
+	github.com/turbot/steampipe-plugin-sdk/v5 v5.14.0
 )
 
 require (
