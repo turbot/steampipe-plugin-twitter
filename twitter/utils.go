@@ -10,9 +10,9 @@ import (
 	"github.com/dghubble/oauth1"
 	twitter "github.com/g8rswimmer/go-twitter/v2"
 
-	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v6/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin/transform"
 )
 
 type authorizeOAuth1 struct{}
@@ -27,11 +27,11 @@ func (a authorizeOAuth2) Add(req *http.Request) {
 	req.Header.Add("Authorization", fmt.Sprintf("Bearer %s", a.Token))
 }
 
-func connect(_ context.Context, d *plugin.QueryData) (*twitter.Client, error) {
+func connect(ctx context.Context, d *plugin.QueryData) (*twitter.Client, error) {
 
 	// Load connection from cache, which preserves throttling protection etc
 	cacheKey := "twitter"
-	if cachedData, ok := d.ConnectionManager.Cache.Get(cacheKey); ok {
+	if cachedData, ok := d.ConnectionCache.Get(ctx, cacheKey); ok {
 		return cachedData.(*twitter.Client), nil
 	}
 
@@ -85,7 +85,7 @@ func connect(_ context.Context, d *plugin.QueryData) (*twitter.Client, error) {
 	}
 
 	// Save to cache
-	d.ConnectionManager.Cache.Set(cacheKey, conn)
+	_ = d.ConnectionCache.Set(ctx, cacheKey, conn)
 
 	return conn, nil
 }
