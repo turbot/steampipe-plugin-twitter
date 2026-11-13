@@ -8,7 +8,7 @@ import (
 
 	twitter "github.com/g8rswimmer/go-twitter/v2"
 
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
 )
 
 func tableTwitterTweet(ctx context.Context) *plugin.Table {

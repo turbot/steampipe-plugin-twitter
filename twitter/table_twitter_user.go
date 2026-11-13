@@ -6,10 +6,9 @@ import (
 	"fmt"
 	"strings"
 
-
 	twitter "github.com/g8rswimmer/go-twitter/v2"
 
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
 )
 
 func tableTwitterUser(ctx context.Context) *plugin.Table {
@@ -57,7 +56,7 @@ func listUser(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (
 	if len(result.Raw.Errors) > 0 {
 		for _, e := range result.Raw.Errors {
 			plugin.Logger(ctx).Error("twitter_user.listUser", "query_error", e, "opts", opts)
-			
+
 			// Check if the Not Found Error is a result of "pinned_tweet_id" parameter, return nil
 			if e.Title == "Not Found Error" {
 				if e.Parameter == "pinned_tweet_id" {

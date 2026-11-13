@@ -1,7 +1,7 @@
 package twitter
 
 import (
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
 )
 
 type twitterConfig struct {
@@ -22,9 +22,9 @@ func ConfigInstance() interface{} {
 
 // GetConfig :: retrieve and cast connection config from query data
 func GetConfig(connection *plugin.Connection) twitterConfig {
-	if connection == nil || connection.Config == nil {
+	if connection == nil || connection.GetConfig() == nil {
 		return twitterConfig{}
 	}
-	config, _ := connection.Config.(twitterConfig)
+	config, _ := connection.GetConfig().(twitterConfig)
 	return config
 }
